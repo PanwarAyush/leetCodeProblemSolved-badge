@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg  transform="scale(1.9)" width="450px" height="500px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <text x="150" y="123" id='num'>0</text>
+<script type="text/javascript">
+    <![CDATA[
+   const api_url='https://leetcode-stats-api.herokuapp.com/panwar2001';
+    async function func(){
+    const response = await fetch(api_url);
+    const data = await response.json(); 
+    document.getElementById("num").textContent = data.totalSolved;
+    }
+    func()
+]]>
+</script>
+</svg>
