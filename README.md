@@ -1,2 +1,2 @@
 # tryleetsvg
-![](https://panwarayush.github.io/tryleetsvg/leet.svg)
+![](https://sunny-cucurucho-7e49b7.netlify.app/)
