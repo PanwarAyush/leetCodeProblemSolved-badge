@@ -1,14 +1,36 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg  transform="scale(1.9)" width="500px" height="500px" version="1.1" xmlns="http://www.w3.org/2000/svg" onload="func()">
-<script type="text/javascript">
-   <![CDATA[
-   const api_url='https://leetcode-stats-api.herokuapp.com/panwar2001';
-    async function func(){
-    const response = await fetch(api_url);
-    const data = await response.json(); 
-    document.getElementById("num").textContent = data.totalSolved;
-    }
-]]>
-</script>
-<text x="150" y="123" id='num'>0</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="startup(evt)" onclick="putit(evt)"><script><![CDATA[
+  var SVGDocument = null;
+  var SVGRoot = null;
+  var count=0;
+  CO=new Array("red","magenta","blue",
+    "cyan","green","yellow","orange")
+ var svgns = 'http://www.w3.org/2000/svg';
+ var xlinkns = 'http://www.w3.org/1999/xlink';
+
+function startup(evt){
+  O=evt.target
+  SVGDoc = O.ownerDocument;
+  SVGRoot = SVGDoc.documentElement;
+  O.setAttribute("onclick","putit(evt)")
+}
+function putit(evt){
+  N = SVGDoc.createElementNS(svgns,"ellipse");
+  N.setAttributeNS(svgns,"id", "P"+count); 
+  N.setAttribute("onmousedown", "ha("+count+")");
+  N.setAttribute("cx", evt.clientX); 
+  N.setAttribute("cy", evt.clientY); 
+  N.setAttribute("rx", 30); 
+  N.setAttribute("ry", 20); 
+  N.setAttribute("opacity",.5);
+  N.setAttribute("fill", CO[count++%CO.length]);
+  SVGRoot.appendChild(N);
+}
+function ha(c){
+  alert("My id is 'P"+c+"'")
+}
+  ]]></script>
+<rect id="P" x="0" y="0" width="100%" height="100%" fill="#dff"/>
+<text id="T" x="40" y="25" font-family="impact" font-size="16;">
+Click anywhere
+</text>
 </svg>
