@@ -1,15 +1,10 @@
 {
     "version": 2,
+    "name": "tryleetsvg",
     "builds": [
-      {
-        "src": "index.js",
-        "use": "@now/node"
-      }
+       { "src": "server.js", "use": "@vercel/node" }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "index.js"
-      }
+       { "src": "/(.*)", "dest": "/server.js" }
     ]
-  }
+ }
