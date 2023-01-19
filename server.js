@@ -9,7 +9,7 @@ let problems;
 function setProblems( username){
   const api_url='https://leetcode-stats-api.herokuapp.com/'+username;
  t(api_url).then((data)=>{
-const s=`<svg width="600" height="100" xmlns="http://www.w3.org/2000/svg"><image href="https://leetcode.com/static/images/LeetCode_Sharing.png" height="100" width="200"/><text x="10" y="18" fill="red" style="background-color:">Solved ${data} problems</text></svg>`
+const s=`<svg width="190" height="30" xmlns="http://www.w3.org/2000/svg" style="background-color:black">	<text x="10" y="18" fill="red" style="background-color:">Solved ${data} problems</text></svg>`
 problems=s;
 })
 }
